@@ -19,8 +19,8 @@ use std::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssi
 /// GF256::zero() is the additive identity
 ///
 /// ```
-/// use ShamirSecret_Share::gf256::GF256;
-/// use ShamirSecret_Share::Field;
+/// use shamir_share::gf256::GF256;
+/// use shamir_share::Field;
 ///
 /// let x = GF256(80);
 /// let x_plus_x = x + x;
@@ -31,8 +31,8 @@ use std::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssi
 /// All elements except zero have inverses
 ///
 /// ```
-/// use ShamirSecret_Share::gf256::GF256;
-/// use ShamirSecret_Share::Field;
+/// use shamir_share::gf256::GF256;
+/// use Sshamir_share::Field;
 ///
 /// let x = GF256(80);
 /// let x_mul_x = x.inverse().unwrap() * x;
@@ -56,7 +56,7 @@ pub mod shamir_secret;
 /// extern crate rand;
 ///
 /// use rand::{thread_rng,Rng};
-/// use ShamirSecret_Share::shamir::Shamir;
+/// use shamir_share::shamir::Shamir;
 ///
 /// let k = 3;
 /// let n = 5;
