@@ -35,26 +35,3 @@ impl<Fq: Field> Polynomial<Fq> {
             })
     }
 }
-
-
-#[cfg(test)]
-mod test {
-    use crate:: ff_gf256::GF256;
-    use crate::polynomial::Polynomial;
-    use crate::Field;
-
-    quickcheck! {
-        fn test_eval_at_zero(intercept: GF256) -> bool {
-            let poly = Polynomial::from_intercept(intercept, 4);
-
-            poly.evaluate_at(GF256::zero()) == intercept
-        }
-
-        fn test_eval_at_one(intercept: GF256) -> bool {
-            let poly = Polynomial::from_intercept(intercept, 4);
-            let sum_coeff = poly.coefficients.iter().fold(GF256::zero(), |sum, &x| sum + x);
-
-            poly.evaluate_at(GF256::one()) == sum_coeff
-        }
-    }
-}
